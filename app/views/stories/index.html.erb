@@ -1,0 +1,24 @@
+<h1>Stories:</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped" role="grid">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Upvotes</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stories.each do |story| %>
+        <tr>
+          <td><%= story.id %></td>
+          <td><%= link_to story.title, story.link %></td>
+          <td><%= story.upvotes %></td>
+          <td><%= story.category %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
