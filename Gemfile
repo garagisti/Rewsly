@@ -12,7 +12,6 @@ gem 'jquery-rails', '~> 4.0'
 gem 'rails',        '~> 4.2'
 gem 'rest-client',  '~> 1.8'
 gem 'sass-rails',   '~> 5.0'
-gem 'sqlite3',      '~> 1.3'
 gem 'turbolinks',   '~> 2.5'
 gem 'uglifier',     '>= 1.3.0'
 
@@ -24,8 +23,10 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'rspec-rails', '~> 3.2'
   gem 'spring'
+  gem 'sqlite3',      '~> 1.3'
 end
 
 group :production do
   gem 'pg',           '~> 0.18'
+  gem 'rails_12factor'
 end
