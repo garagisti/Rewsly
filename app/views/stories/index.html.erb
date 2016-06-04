@@ -8,6 +8,7 @@
         <th>Title</th>
         <th>Upvotes</th>
         <th>Category</th>
+        <th>Vote</th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +18,8 @@
           <td><%= link_to story.title, story.link %></td>
           <td><%= story.upvotes %></td>
           <td><%= story.category %></td>
+          <td><%= link_to '+', upvote_story_path(story), method: :post, class: 'btn btn-default btn-sm' %>
+          <%= link_to '-', downvote_story_path(story), method: :post, class: 'btn btn-default btn-sm' %></td>
         </tr>
       <% end %>
     </tbody>

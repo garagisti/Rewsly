@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
   root 'main#index'
 
-  resources :stories, only: [:index, :create, :new, :show]
+  resources :stories, only: [:index, :create, :new, :show] do
+    member do
+      post 'upvote'
+      post 'downvote'
+    end
+  end
+
+  # resources :stories do
+  #   member do
+  #     post 'upvote'
+  #   end
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

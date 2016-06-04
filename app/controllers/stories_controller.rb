@@ -21,7 +21,6 @@ def create
   end
 end
 
-
 def new
   @story = Story.new()
 end
@@ -32,6 +31,18 @@ def get_story
   rescue
     redirect_to stories_path
   end
+end
+
+def upvote
+  @story = get_story
+  @story.increment!(:upvotes)
+  redirect_to stories_path
+end
+
+def downvote
+  @story = get_story
+  @story.decrement!(:upvotes)
+  redirect_to stories_path
 end
 
   # White lists the corresponding parameters
